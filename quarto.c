@@ -10,12 +10,12 @@
 #define MAX1 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
 #define MAX2 20 // restante
 #define MAX3 200// descricao
-#define MAX_CANDIDATURAS 200 // <-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#define MAX_CANDIDATURAS 200 // n tem limite, apenas exemplo
 #define LIVRE "livre"
 #define OCUPADO "ocupado"
 
 
-/* Estrutura de dados do TAD ticket */
+/* Estrutura de dados do TAD quarto */
 struct _quarto{
     char codigo[MAX2];
     gerente g;

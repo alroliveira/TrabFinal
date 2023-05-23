@@ -15,6 +15,8 @@
 
 // constantes
 #define MAXL 200 // A CONFIRMAR <------------------------------------------------------------------------------------------
+#define MAX1 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
+#define MAX2 20 // restante
 
 // protótipos funções
 void interpretador(gestor g);
@@ -37,12 +39,22 @@ int main (){
     return 0;
 }
 
+// Remover o primeiro caractere o " "
+char* removePimeiroCaracterString(char* string){    
+    memmove(string, string + 1, strlen(string));
+    string[strlen(string) - 1] = '\0';
+    return string;
+}
+
+
 void interpretador(gestor g){
     char linha[MAXL], cmd;
 
+    printf("> ");
     fgets(linha,MAXL,stdin);
     sscanf(linha, "%s %[^\n]", cmd, linha);
-	
+	removePimeiroCaracterString(linha);
+
     do{
         if (strcmp(cmd, "IE")==0) cmdInserirEstudante(g,linha);
         else if (strcmp(cmd, "DE")==0) cmdDadosEstudante(g,linha);
@@ -64,7 +76,14 @@ void interpretador(gestor g){
 
 }
 
-void cmdInserirEstudante(gestor g, char linha){
+void cmdInserirEstudante(gestor g, char resto){
+    char login[MAX2], nomeEstudante[MAX1], localidade[MAX1], universidade[MAX1];
+    int idade;
+    char linha[MAXL];
+
+    sscanf(resto, "%s %[^\n]", login, resto);                   //login
+    strcpy(nomeEstudante, removePimeiroCaracterString(resto));  //nomeEstudante
+    fgets(linha,MAXL,stdin);
 
 }
 void cmdDadosEstudante(gestor g, char linha){
