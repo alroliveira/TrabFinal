@@ -66,3 +66,11 @@ void destroiGestorEElems(gestor g){
 	destroiDicEElems (g->quartos, destroiQuartoGen);
 	free(g);
 }
+
+int existeEstudanteGestor(gestor g,char login){
+       return existeElemDicionario(g->estudantes, (void *) login);
+}
+
+int existeGerenteGestor(gestor g,char login){
+       return existeElemDicionario(g->gerentes, (void *) login);
+}

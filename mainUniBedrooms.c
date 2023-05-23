@@ -38,13 +38,13 @@ int main (){
     destroiGestorTD(g);
     return 0;
 }
-
+/*
 // Remover o primeiro caractere o " "
 char* removePimeiroCaracterString(char* string){    
     memmove(string, string + 1, strlen(string));
     string[strlen(string) - 1] = '\0';
     return string;
-}
+}*/
 
 
 void interpretador(gestor g){
@@ -53,7 +53,7 @@ void interpretador(gestor g){
     printf("> ");
     fgets(linha,MAXL,stdin);
     sscanf(linha, "%s %[^\n]", cmd, linha);
-	removePimeiroCaracterString(linha);
+//	removePimeiroCaracterString(linha);
 
     do{
         if (strcmp(cmd, "IE")==0) cmdInserirEstudante(g,linha);
@@ -81,9 +81,17 @@ void cmdInserirEstudante(gestor g, char resto){
     int idade;
     char linha[MAXL];
 
-    sscanf(resto, "%s %[^\n]", login, resto);                   //login
-    strcpy(nomeEstudante, removePimeiroCaracterString(resto));  //nomeEstudante
+    sscanf(resto, "%s %s", login, nomeEstudante);
     fgets(linha,MAXL,stdin);
+    sscanf(resto, "%d %s", &idade, localidade);
+    fgets(universidade,MAX1,stdin);
+
+    if(existeEstudanteGestor(g, login)|| existeGerenteGestor(g, login)){
+        printf("Utilizador ja existente.\n\n");
+    }
+    else{
+        printf("Registo de estudante executado.\n\n");
+    }
 
 }
 void cmdDadosEstudante(gestor g, char linha){
