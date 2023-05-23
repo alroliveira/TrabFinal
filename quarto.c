@@ -7,28 +7,22 @@
 #include "estudante.h"
 #include "gerente.h"
 
-#define MAX1 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
-#define MAX2 20 // restante
-#define MAX3 200// descricao
-#define MAX_CANDIDATURAS 200 // n tem limite, apenas exemplo
-#define LIVRE "livre"
-#define OCUPADO "ocupado"
 
 
 /* Estrutura de dados do TAD quarto */
 struct _quarto{
-    char codigo[MAX2];
+    char codigo[MAX2Q];
     gerente g;
-    char nomeResidencia[MAX1];
-    char universidade[MAX1];
-    char localidade[MAX1];
+    char nomeResidencia[MAX1Q];
+    char universidade[MAX1Q];
+    char localidade[MAX1Q];
     int andar;
-    char descricao[MAX3];
-    char estado[MAX1];
+    char descricao[MAX3Q];
+    char estado[MAX1Q];
     sequencia estudantes;
 };
 
-quarto criarQuarto(char codigo[MAX2], gerente g, char nomeResidencia[MAX1], char universidade[MAX1], char localidade[MAX1], int andar, char descricao[MAX3]){
+quarto criarQuarto(char* codigo, gerente g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao){
     quarto q;
     q = (quarto) malloc(sizeof(struct _quarto));
     if (q==NULL) return NULL;
@@ -47,6 +41,8 @@ quarto criarQuarto(char codigo[MAX2], gerente g, char nomeResidencia[MAX1], char
     strcpy(q->descricao, descricao);
     strcpy(q->estado, LIVRE);
     q->estudantes = criaSequencia(MAX_CANDIDATURAS);
+
+    return q;
 }
 
 void destroiQuarto(quarto q){

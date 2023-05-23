@@ -4,20 +4,18 @@
 #include "estudante.h"
 #include "iterador.h"
 
-#define MAX1 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
-#define MAX2 20 // restante
 
 /* Estrutura de dados do TAD estudante */
 struct _estudante{
-    char login[MAX2];
-    char nomeEstudante[MAX1];
+    char login[MAX2E];
+    char nomeEstudante[MAX1E];
     int idade;
-    char localidade[MAX1];
-    char universidade[MAX1];
+    char localidade[MAX1E];
+    char universidade[MAX1E];
     int numCandidaturas;
 };
 
-estudante criaEstudante(char login, char nomeEstudante, int idade, char localidade, char universidade){
+estudante criaEstudante(char* login, char* nomeEstudante, int idade, char* localidade, char* universidade){
     estudante e;
 
     e = (estudante) malloc(sizeof(struct _estudante));

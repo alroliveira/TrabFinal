@@ -17,10 +17,6 @@
 
 #include <stdlib.h>
 
-#define CAP_ESTUDANTES 20000
-#define CAP_GERENTES 1000
-#define CAP_QUARTOS 10000
-
 
 struct _gestor{
 	dicionario gerentes;
@@ -67,10 +63,18 @@ void destroiGestorEElems(gestor g){
 	free(g);
 }
 
-int existeEstudanteGestor(gestor g,char login){
-       return existeElemDicionario(g->estudantes, (void *) login);
+int existeEstudanteGestor(gestor g,char* login){
+       return existeElemDicionario(g->estudantes, (void *)&login);
 }
 
-int existeGerenteGestor(gestor g,char login){
-       return existeElemDicionario(g->gerentes, (void *) login);
+int existeGerenteGestor(gestor g,char* login){
+       return existeElemDicionario(g->gerentes, (void *)&login);
+}
+
+int novoEstudanteGestor (gestor g,char* login, char* nomeEstudante, int idade, char* localidade, char* universidade){
+	estudante e = criaEstudante(login, nomeEstudante, idade, localidade, universidade);
+	int aux = adicionaElemDicionario(g->estudantes, (void *)&login, e);
+	if (aux != 1)
+		destroiEstudante(e);
+	return aux;
 }

@@ -20,22 +20,22 @@
 
 // protótipos funções
 void interpretador(gestor g);
-void cmdInserirEstudante(gestor g, char linha);
-void cmdDadosEstudante(gestor g, char linha);
-void cmdInserirGerente(gestor g, char linha);
-void cmdDadosGerente (gestor g, char linha);
-void cmdInserirQuarto(gestor g, char linha);
-void cmdDadodsQuarto(gestor g, char linha);
-void cmdModificarQuarto(gestor g, char linha);
-void cmdRemoverQuarto(gestor g, char linha);
-void cmdIncerirCandidatura(gestor g, char linha);
-void cmdAceitarCandidatura(gestor g, char linha);
-void cmdListaCandidaturas(gestor g, char linha);
+void cmdInserirEstudante(gestor g, char* linha);
+void cmdDadosEstudante(gestor g, char* linha);
+void cmdInserirGerente(gestor g, char* linha);
+void cmdDadosGerente (gestor g, char* linha);
+void cmdInserirQuarto(gestor g, char* linha);
+void cmdDadodsQuarto(gestor g, char* linha);
+void cmdModificarQuarto(gestor g, char* linha);
+void cmdRemoverQuarto(gestor g, char* linha);
+void cmdIncerirCandidatura(gestor g, char* linha);
+void cmdAceitarCandidatura(gestor g, char* linha);
+void cmdListaCandidaturas(gestor g, char* linha);
 
 int main (){
     gestor g = criaGestor();
     interpretador(g);
-    destroiGestorTD(g);
+    destroiGestorEElems(g);
     return 0;
 }
 /*
@@ -48,7 +48,7 @@ char* removePimeiroCaracterString(char* string){
 
 
 void interpretador(gestor g){
-    char linha[MAXL], cmd;
+    char linha[MAXL], cmd[MAXL];
 
     printf("> ");
     fgets(linha,MAXL,stdin);
@@ -76,7 +76,7 @@ void interpretador(gestor g){
 
 }
 
-void cmdInserirEstudante(gestor g, char resto){
+void cmdInserirEstudante(gestor g, char* resto){
     char login[MAX2], nomeEstudante[MAX1], localidade[MAX1], universidade[MAX1];
     int idade;
     char linha[MAXL];
@@ -91,36 +91,37 @@ void cmdInserirEstudante(gestor g, char resto){
     }
     else{
         printf("Registo de estudante executado.\n\n");
+        novoEstudanteGestor (g, login, nomeEstudante, idade, localidade, universidade);
     }
 
 }
-void cmdDadosEstudante(gestor g, char linha){
+void cmdDadosEstudante(gestor g, char* linha){
 
 }
-void cmdInserirGerente(gestor g, char linha){
+void cmdInserirGerente(gestor g, char* linha){
 
 }
-void cmdDadosGerente (gestor g, char linha){
+void cmdDadosGerente (gestor g, char* linha){
 
 }
-void cmdInserirQuarto(gestor g, char linha){
+void cmdInserirQuarto(gestor g, char* linha){
 
 }
-void cmdDadodsQuarto(gestor g, char linha){
+void cmdDadodsQuarto(gestor g, char* linha){
 
 }
-void cmdModificarQuarto(gestor g, char linha){
+void cmdModificarQuarto(gestor g, char* linha){
 
 }
-void cmdRemoverQuarto(gestor g, char linha){
+void cmdRemoverQuarto(gestor g, char* linha){
 
 }
-void cmdIncerirCandidatura(gestor g, char linha){
+void cmdIncerirCandidatura(gestor g, char* linha){
 
 }
-void cmdAceitarCandidatura(gestor g, char linha){
+void cmdAceitarCandidatura(gestor g, char* linha){
 
 }
-void cmdListaCandidaturas(gestor g, char linha){
+void cmdListaCandidaturas(gestor g, char* linha){
 
 }

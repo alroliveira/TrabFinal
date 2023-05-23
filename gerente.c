@@ -4,17 +4,15 @@
 #include "gerente.h"
 #include "iterador.h"
 
-#define MAX1 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
-#define MAX2 20 // restante
 
 /* Estrutura de dados do TAD gerente */
 struct _gerente{
-    char login[MAX2];
-    char nomeGerente[MAX1];
-    char universidade[MAX1];
+    char login[MAX2G];
+    char nomeGerente[MAX1G];
+    char universidade[MAX1G];
 };
 
-gerente criaGerente(char login, char nomeGerente, char universidade){
+gerente criaGerente(char* login, char* nomeGerente, char* universidade){
     gerente g;
 
     g = (gerente) malloc(sizeof(struct _gerente));
@@ -32,5 +30,5 @@ void destroiGerente(gerente g){
 }
 
 void destroiGerenteGen (void* g){
-	destroiEstudante ((gerente) g);
+	destroiGerente ((gerente) g);
 } 

@@ -1,14 +1,18 @@
 #ifndef _H_QUARTO
 #define _H_QUARTO
 
-#define MAX1 10 //ver os valores
-
+#define MAX1Q 50 // nomes de estudantes, gerentes, residˆencias, universidades e localidades
+#define MAX2Q 20 // restante
+#define MAX3Q 200// descricao
+#define MAX_CANDIDATURAS 200 // n tem limite, apenas exemplo
+#define LIVRE "livre"
+#define OCUPADO "ocupado"
 
 /* Tipos do TAD estudante */
 typedef struct _quarto * quarto;
 /* Protótipos das funções associadas a um quarto */
 
-quarto criarQuarto(char codigo[MAX2], gerente g, char nomeResidencia[MAX1], char universidade[MAX1], char localidade[MAX1], int andar, char descricao[MAX3]);
+quarto criarQuarto(char* codigo, gerente g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao);
 void destroiQuarto(quarto q);
 void destroiQuartoGen(void* q);
 
