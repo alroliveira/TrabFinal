@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "gestor.h"
 #include "gerente.h"
 #include "iterador.h"
 
@@ -32,3 +33,12 @@ void destroiGerente(gerente g){
 void destroiGerenteGen (void* g){
 	destroiGerente ((gerente) g);
 } 
+
+char* daNomeGerente (gerente g){
+    return g->nomeGerente;
+}
+
+char* daUniversidadeGerente (gerente g){
+    return g->universidade;
+}
+

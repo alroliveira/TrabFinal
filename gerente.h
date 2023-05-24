@@ -14,6 +14,9 @@ void destroiGerente(gerente g);
 
 void destroiGerenteGen (void* g);
 
+char* daNomeGerente (gerente g);
+
+char* daUniversidadeGerente (gerente g);
 
 
 #endif

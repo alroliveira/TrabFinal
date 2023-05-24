@@ -31,5 +31,19 @@ int existeGerenteGestor(gestor g,char* login);
 //Retorna 1 se adicionar, e 0, caso contrário
 int novoEstudanteGestor (gestor g,char* login, char* nomeEstudante, int idade, char* localidade, char* universidade);
 
+//Retorna 1 se adicionar, e 0, caso contrário
+int novoGerenteGestor (gestor g, char* login, char* nomeGerente, char* universidade);
+
+
+/*//RETORNA A INFORMAÇAO DE UM UTILIZADOR ESTUDANTE
+char * LoginEstudante(gestor g, int login);*/
+void *EstudanteGestor(gestor g, char*ch);
+
+void *GerenteGestor(gestor g, char* ch);
+
+// 1 - caso exista o aluno
+// 0 - caso não exista o aluno
+int existeQuartoGestor(gestor g, char* codigo);
+
 
 #endif /* _H_GESTOR */

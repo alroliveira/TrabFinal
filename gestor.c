@@ -64,11 +64,11 @@ void destroiGestorEElems(gestor g){
 }
 
 int existeEstudanteGestor(gestor g,char* login){
-       return existeElemDicionario(g->estudantes, (void *)&login);
+    return existeElemDicionario(g->estudantes, (void *)&login);
 }
 
 int existeGerenteGestor(gestor g,char* login){
-       return existeElemDicionario(g->gerentes, (void *)&login);
+    return existeElemDicionario(g->gerentes, (void *)&login);
 }
 
 int novoEstudanteGestor (gestor g,char* login, char* nomeEstudante, int idade, char* localidade, char* universidade){
@@ -77,4 +77,20 @@ int novoEstudanteGestor (gestor g,char* login, char* nomeEstudante, int idade, c
 	if (aux != 1)
 		destroiEstudante(e);
 	return aux;
+}
+
+int novoGerenteGestor (gestor g, char* login, char* nomeGerente, char* universidade){
+	gerente g2 = criaGerente(login, nomeGerente, universidade);
+	int aux = adicionaElemDicionario(g->gerentes, (void *)&login, g2);
+	if (aux != 1)
+		destroiGerente(g2);
+	return aux;
+}
+
+void *GerenteGestor(gestor g, char* ch){
+    return (void*)elementoDicionario(g->gerentes, (void *)&ch);
+}
+
+int existeQuartoGestor(gestor g, char* codigo){
+    return existeElemDicionario(g->quartos, (void *)&codigo);
 }

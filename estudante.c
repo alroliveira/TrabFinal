@@ -35,6 +35,15 @@ void destroiEstudante(estudante e){
     free(e);
 }
 
-void destroiEstudanteGen (void* e){
-	destroiEstudante ((estudante) e);
+void destroiEstudanteGen(void* e){
+	destroiEstudante((estudante) e);
 } 
+char* daNomeEstudante(estudante e){
+    return e->nomeEstudante;
+}
+char* daLocalidadeEstudante(estudante e){
+    return e->localidade;
+}
+char* daUniversidadeEstudante(estudante e){
+    return e->universidade;
+}

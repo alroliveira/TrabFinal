@@ -13,7 +13,7 @@
 /* Estrutura de dados do TAD quarto */
 struct _quarto{
     char codigo[MAX2Q];
-    gerente g;
+    void* gerente;
     char nomeResidencia[MAX1Q];
     char universidade[MAX1Q];
     char localidade[MAX1Q];
@@ -22,8 +22,8 @@ struct _quarto{
     char estado[MAX1Q];
     sequencia estudantes;
 };
-/*
-quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao){
+
+quarto criarQuarto(char* codigo, void* gerente, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao){
     quarto q;
     q = (quarto) malloc(sizeof(struct _quarto));
     if (q==NULL) return NULL;
@@ -34,7 +34,7 @@ quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* univers
 //    }
 
     strcpy(q->codigo, codigo);
-    q->g = g;
+    //q->g = g;
     strcpy(q->nomeResidencia, nomeResidencia);
     strcpy(q->universidade, universidade);
     strcpy(q->localidade, localidade);
@@ -44,7 +44,7 @@ quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* univers
     q->estudantes = criaSequencia(MAX_CANDIDATURAS);
 
     return q;
-}*/
+}
 
 void destroiQuarto(quarto q){
     //free(q->g);

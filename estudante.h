@@ -10,7 +10,14 @@ typedef struct _estudante * estudante;
 
 estudante criaEstudante(char* login, char* nomeEstudante, int idade, char* localidade, char* universidade);
 void destroiEstudante(estudante e);
-void destroiEstudanteGen (void* e);
+void destroiEstudanteGen(void* e);
+
+char* daNomeEstudante(estudante e);
+
+char* daLocalidadeEstudante(estudante e);
+
+char* daUniversidadeEstudante(estudante e);
+
 
 
 

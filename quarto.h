@@ -12,9 +12,9 @@
 typedef struct _quarto *quarto;
 /* Protótipos das funções associadas a um quarto */
 
-/*
-quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao);
-*/
+
+quarto criarQuarto(char* codigo, void* gerente, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao);
+
 
 void destroiQuarto(quarto q);
 
