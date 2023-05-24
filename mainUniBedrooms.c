@@ -50,12 +50,14 @@ char* removePimeiroCaracterString(char* string){
 void interpretador(gestor g){
     char linha[MAXL], cmd[MAXL];
 
-    printf("> ");
-    fgets(linha,MAXL,stdin);
-    sscanf(linha, "%s %[^\n]", cmd, linha);
-//	removePimeiroCaracterString(linha);
+    
 
     do{
+        printf("> ");
+        fgets(linha,MAXL,stdin);
+        sscanf(linha, "%s %[^\n]s", cmd, linha);
+        //removePimeiroCaracterString(linha);
+
         if (strcmp(cmd, "IE")==0) cmdInserirEstudante(g,linha);
         else if (strcmp(cmd, "DE")==0) cmdDadosEstudante(g,linha);
         else if (strcmp(cmd, "IG")==0) cmdDadosEstudante(g,linha);
@@ -81,9 +83,9 @@ void cmdInserirEstudante(gestor g, char* resto){
     int idade;
     char linha[MAXL];
 
-    sscanf(resto, "%s %s", login, nomeEstudante);
+    sscanf(resto, "%s %[^\n]s", login, nomeEstudante);      //%[^\n]s -> ler ate ao \n
     fgets(linha,MAXL,stdin);
-    sscanf(resto, "%d %s", &idade, localidade);
+    sscanf(resto, "%d %[^\n]s", &idade, localidade);
     fgets(universidade,MAX1,stdin);
 
     if(existeEstudanteGestor(g, login)|| existeGerenteGestor(g, login)){

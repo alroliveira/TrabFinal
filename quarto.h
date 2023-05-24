@@ -8,12 +8,16 @@
 #define LIVRE "livre"
 #define OCUPADO "ocupado"
 
-/* Tipos do TAD estudante */
-typedef struct _quarto * quarto;
+/* Tipos do TAD quarto */
+typedef struct _quarto *quarto;
 /* Protótipos das funções associadas a um quarto */
 
-quarto criarQuarto(char* codigo, gerente g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao);
+/*
+quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao);
+*/
+
 void destroiQuarto(quarto q);
+
 void destroiQuartoGen(void* q);
 
 

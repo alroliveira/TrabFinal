@@ -6,6 +6,7 @@
 #include "sequencia.h"
 #include "estudante.h"
 #include "gerente.h"
+#include "gestor.h"
 
 
 
@@ -21,16 +22,16 @@ struct _quarto{
     char estado[MAX1Q];
     sequencia estudantes;
 };
-
-quarto criarQuarto(char* codigo, gerente g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao){
+/*
+quarto criarQuarto(char* codigo, gerente *g, char* nomeResidencia, char* universidade, char* localidade, int andar, char* descricao){
     quarto q;
     q = (quarto) malloc(sizeof(struct _quarto));
     if (q==NULL) return NULL;
-    q->g = (gerente)malloc(sizeof(gerente));
-    if (q->g == NULL){
-        free (q);
-        return NULL;
-    }
+//    q->g = (gerente)malloc(sizeof(gerente));
+//    if (q->g == NULL){
+//        free (q);
+//        return NULL;
+//    }
 
     strcpy(q->codigo, codigo);
     q->g = g;
@@ -43,10 +44,10 @@ quarto criarQuarto(char* codigo, gerente g, char* nomeResidencia, char* universi
     q->estudantes = criaSequencia(MAX_CANDIDATURAS);
 
     return q;
-}
+}*/
 
 void destroiQuarto(quarto q){
-    free(q->g);
+    //free(q->g);
     free(q);
 }
 
