@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "gestor.h"
 #include "gerente.h"
 #include "iterador.h"
 

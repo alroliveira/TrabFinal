@@ -14,9 +14,12 @@ void destroiEstudanteGen(void* e);
 
 char* daNomeEstudante(estudante e);
 
+int daIdadeEstudante(estudante e);
+
 char* daLocalidadeEstudante(estudante e);
 
 char* daUniversidadeEstudante(estudante e);
+
 
 
 

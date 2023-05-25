@@ -41,6 +41,9 @@ void destroiEstudanteGen(void* e){
 char* daNomeEstudante(estudante e){
     return e->nomeEstudante;
 }
+int daIdadeEstudante(estudante e){
+    return e->idade;
+}
 char* daLocalidadeEstudante(estudante e){
     return e->localidade;
 }

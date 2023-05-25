@@ -20,6 +20,16 @@ void destroiQuarto(quarto q);
 
 void destroiQuartoGen(void* q);
 
+char* daNomeQuarto(quarto q);
+
+char* daUniversidadeQuarto(quarto q);
+
+char* daLocalidadeQuarto(quarto q);
+
+int daAndarQuarto(quarto q);
+
+char* daDescricaoQuarto(quarto q);
+
 
 
 

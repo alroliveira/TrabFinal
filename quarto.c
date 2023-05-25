@@ -54,3 +54,23 @@ void destroiQuarto(quarto q){
 void destroiQuartoGen(void* q){
     destroiQuarto((quarto) q);
 }
+char* daNomeQuarto(quarto q){
+    return q->nomeResidencia;
+}
+
+char* daUniversidadeQuarto(quarto q){
+    return q->universidade;
+}
+
+char* daLocalidadeQuarto(quarto q){
+    return q->localidade;
+}
+
+int daAndarQuarto(quarto q){
+    return q->andar;
+}
+
+
+char* daDescricaoQuarto(quarto q){
+    return q->descricao;
+}
